@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send({ message: 'Hello USERS API' });
+  res.send({ message: 'Hello ADMINS API' });
 });
 
 app.use(login.router);
@@ -30,7 +30,7 @@ const exchangeApp = express();
 exchangeApp.use(exchange.router);
 
 exchangeApp.get('/', (req, res)=> {
-  res.send({message: 'Hello USERS internal API'});
+  res.send({message: 'Hello ADMINS internal API'});
 });
 
 exchangeApp.listen(exchangePort, host, ()=> {

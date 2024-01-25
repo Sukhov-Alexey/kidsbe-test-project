@@ -1,0 +1,20 @@
+{
+  "name": "dto",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "dto/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "dto/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

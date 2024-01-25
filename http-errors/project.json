@@ -1,0 +1,20 @@
+{
+  "name": "http-errors",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "http-errors/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "http-errors/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

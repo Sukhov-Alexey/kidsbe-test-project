@@ -1,0 +1,38 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Users – Server",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "nx",
+      "runtimeArgs": ["run", "users:serve"],
+      "outputCapture": "std",
+      "internalConsoleOptions": "openOnSessionStart",
+      "console": "internalConsole"
+    },
+    {
+      "name": "Admins – Server",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "nx",
+      "runtimeArgs": ["run", "admins:serve"],
+      "outputCapture": "std",
+      "internalConsoleOptions": "openOnSessionStart",
+      "console": "internalConsole"
+    },
+    {
+      "name": "Articles – Server",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "nx",
+      "runtimeArgs": ["run", "articles:serve"],
+      "outputCapture": "std",
+      "internalConsoleOptions": "openOnSessionStart",
+      "console": "internalConsole"
+    }
+  ]
+}
