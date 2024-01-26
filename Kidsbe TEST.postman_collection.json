@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "5e36f019-f1d7-404d-929a-8948d2b109ca",
+		"name": "Kidsbe TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29075757"
+	},
+	"item": [
+		{
+			"name": "USERS",
+			"item": [
+				{
+					"name": "INTERNAL",
+					"item": [
+						{
+							"name": "Get list of USERS by IDs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3015/exchange/userslist?ids=90b207f8-a6b7-4cf2-9369-bc1464c7de24;8bb57149-3f62-4723-8cc6-ee43d155c9b2",
+									"host": [
+										"localhost"
+									],
+									"port": "3015",
+									"path": [
+										"exchange",
+										"userslist"
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "90b207f8-a6b7-4cf2-9369-bc1464c7de24;8bb57149-3f62-4723-8cc6-ee43d155c9b2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Pure\",\r\n    \"lastName\": \"Guy\",\r\n    \"email\": \"PureGuy@example.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4010/sign-up",
+							"host": [
+								"localhost"
+							],
+							"port": "4010",
+							"path": [
+								"sign-up"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create USER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"FirstName\",\r\n    \"lastName\": \"LastName\",\r\n    \"email\": \"email@example.com\",\r\n    \"password\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3010/sign-up",
+									"host": [
+										"localhost"
+									],
+									"port": "3010",
+									"path": [
+										"sign-up"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "119"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"77-pHByZnY5QWR4w6P30LZBoUdfk4U\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 22 Jan 2024 14:37:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"4e5e76c7-7f80-4182-bb98-63efa410ed69\",\n    \"firstName\": \"FirstName\",\n    \"lastName\": \"LastName\",\n    \"email\": \"email@examile.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"coolguy@example.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4010/login",
+							"host": [
+								"localhost"
+							],
+							"port": "4010",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh USER tokens",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI1OTM1ZGEzNS1mYjNmLTRmNTQtYWFkMS02ZWE0N2MxNTkzZTQiLCJyb2xlIjoiVVNFUiIsImlzUmVmcmVzaCI6dHJ1ZSwiZXhwIjoxNzA2OTEwNDcxLCJpc3MiOiJVU0VSIn0.qUn5W1ZXb4FlIYPI-3XzlnxuLDid9wA9iLEzftJdD44\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4010/login",
+							"host": [
+								"localhost"
+							],
+							"port": "4010",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4010",
+							"host": [
+								"localhost"
+							],
+							"port": "4010"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ARTICLES",
+			"item": [
+				{
+					"name": "Ping Articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4030",
+							"host": [
+								"localhost"
+							],
+							"port": "4030"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get List of ARTICLES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4030/articles?page=0&perPage=10",
+							"host": [
+								"localhost"
+							],
+							"port": "4030",
+							"path": [
+								"articles"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "perPage",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ARTICLE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4030/articles/{{articleId}}",
+							"host": [
+								"localhost"
+							],
+							"port": "4030",
+							"path": [
+								"articles",
+								"{{articleId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create ARTICLE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Cool article\",\r\n    \"content\": \"from cool guy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4030/articles",
+							"host": [
+								"localhost"
+							],
+							"port": "4030",
+							"path": [
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ARTICLE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"UPDATED COOL HEDER\",\r\n    \"content\": \"from the cool guy. But Admin take changes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4030/articles/{{articleId}}",
+							"host": [
+								"localhost"
+							],
+							"port": "4030",
+							"path": [
+								"articles",
+								"{{articleId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ARTICLE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4030/articles/{{articleId}}",
+							"host": [
+								"localhost"
+							],
+							"port": "4030",
+							"path": [
+								"articles",
+								"{{articleId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ADMINS",
+			"item": [
+				{
+					"name": "INTERNAL",
+					"item": [
+						{
+							"name": "Get list of ADMINS by IDs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3025/exchange/userslist?ids=90b207f8-a6b7-4cf2-9369-bc1464c7de24;8bb57149-3f62-4723-8cc6-ee43d155c9b2",
+									"host": [
+										"localhost"
+									],
+									"port": "3025",
+									"path": [
+										"exchange",
+										"userslist"
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "90b207f8-a6b7-4cf2-9369-bc1464c7de24;8bb57149-3f62-4723-8cc6-ee43d155c9b2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Big\",\r\n    \"lastName\": \"Admin\",\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4020/sign-up",
+							"host": [
+								"localhost"
+							],
+							"port": "4020",
+							"path": [
+								"sign-up"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create USER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"FirstName\",\r\n    \"lastName\": \"LastName\",\r\n    \"email\": \"email@example.com\",\r\n    \"password\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3010/sign-up",
+									"host": [
+										"localhost"
+									],
+									"port": "3010",
+									"path": [
+										"sign-up"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "119"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"77-pHByZnY5QWR4w6P30LZBoUdfk4U\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 22 Jan 2024 14:37:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"4e5e76c7-7f80-4182-bb98-63efa410ed69\",\n    \"firstName\": \"FirstName\",\n    \"lastName\": \"LastName\",\n    \"email\": \"email@examile.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"collguy@example.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4020/login",
+							"host": [
+								"localhost"
+							],
+							"port": "4020",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh ADMIN tokens",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJiMTQyZTljZS1iZGU5LTRiNzEtYmNmZi1hNmY3NDNjOTdhYzkiLCJyb2xlIjoiVVNFUiIsImlzUmVmcmVzaCI6dHJ1ZSwiZXhwIjoxNzA2NzQ2NDIxLCJpc3MiOiJVU0VSIn0.SyzEzwCFwotTj1T4-sJ_vY4mrEmQel6pdiU_OYuAhfA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4020/login",
+							"host": [
+								"localhost"
+							],
+							"port": "4020",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "jwt",
+		"jwt": [
+			{
+				"key": "payload",
+				"value": "{\r\n    \"role\": \"ADMIN\",\r\n    \"userId\": \"0b3d85fa-32e4-4273-8669-a88d6f150524\",\r\n    \"isRefresh\": false,\r\n    \"exp\": 1769202187\r\n}",
+				"type": "string"
+			},
+			{
+				"key": "headerPrefix",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "secret",
+				"value": "supersecretstring",
+				"type": "string"
+			},
+			{
+				"key": "algorithm",
+				"value": "HS256",
+				"type": "string"
+			},
+			{
+				"key": "isSecretBase64Encoded",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "queryParamKey",
+				"value": "token",
+				"type": "string"
+			},
+			{
+				"key": "header",
+				"value": "{}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "articleId",
+			"value": "edabf263-66a9-4da3-94d7-ba160e9fe792"
+		}
+	]
+}
