@@ -15,11 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@kidsbe/auth-common": ["auth-common/src/index.ts"],
-      "@kidsbe/auth-utils": ["auth-utils/src/index.ts"],
-      "@kidsbe/database": ["database/src/index.ts"],
-      "@kidsbe/dto": ["dto/src/index.ts"],
-      "@kidsbe/http-errors": ["http-errors/src/index.ts"]
+      "@kidsbe/auth-common": ["libs/auth-common/src/index.ts"],
+      "@kidsbe/auth-utils": ["libs/auth-utils/src/index.ts"],
+      "@kidsbe/database": ["libs/database/src/index.ts"],
+      "@kidsbe/dto": ["libs/dto/src/index.ts"],
+      "@kidsbe/http-errors": ["libs/http-errors/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

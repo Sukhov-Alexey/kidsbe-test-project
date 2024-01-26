@@ -4,5 +4,94 @@ services:
     build:
       dockerfile: apps/users/Dockerfile
       context: .
-  enviroment:
+    command: npm run serve:users
+    ports:
+      - "4010:3010"
+    expose:
+      - "3010:3010"
+      - "3015:3015"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      API_PORT: 3010
+      EXCHANGE_PORT: 3015
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: 12345
+      DB_NAME: kidsbe_users
+      SALT_ROUNDS: 10
+      ROLE: USER
+      JWT_SECRET: supersecretstring
+      JWT_ACCESS_PERIOD: 12000
+      JWT_REFRESH_PREIOD: 1209600000
+
+  admins:
+    build:
+      dockerfile: apps/admins/Dockerfile
+      context: .
+    command: npm run serve:admins
+    ports:
+      - "4020:3020"
+    expose:
+      - "3020:3020"
+      - "3025:3025"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      API_PORT: 3020
+      EXCHANGE_PORT: 3025
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: 12345
+      DB_NAME: kidsbe_admins
+      SALT_ROUNDS: 10
+      ROLE: ADMINS
+      JWT_SECRET: supersecretstring
+      JWT_ACCESS_PERIOD: 12000
+      JWT_REFRESH_PREIOD: 1209600000
   
+  articles:
+    build:
+      dockerfile: apps/articles/Dockerfile
+      context: .
+    command: npm run serve:articles
+    ports:
+      - "4030:3030"
+    expose:
+      - "3030:3030"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      API_PORT: 3030
+      USERS_EXCHANGE_URL: http://users:3015
+      ADMINS_EXCHANGE_URL: http://admins:3025
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: 12345
+      DB_NAME: kidsbe_articles
+      SALT_ROUNDS: 10
+      JWT_SECRET: supersecretstring
+
+  db:
+    build:
+      dockerfile: Dockerfile
+      context: ./d-postgresql
+    ports:
+      - 5431:5432
+    expose:
+      - 5432
+
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_USER: postgres
+
+networks:
+  default:
+    name: mvp_default
+    driver: bridge

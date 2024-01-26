@@ -2,9 +2,9 @@ import express from 'express';
 import { login, exchange } from '@kidsbe/auth-common';
 import { errorHandler } from '@kidsbe/http-errors';
 
-const host = process.env.HOST ?? 'localhost';
+const host = process.env.HOST ?? '0.0.0.0';
 console.log(process.env.API_PORT)
-const port = process.env.API_PORT ? Number(process.env.API_PORT) : 3000;
+const port = process.env.API_PORT ? Number(process.env.API_PORT) : 3010;
 const exchangePort = process.env.EXCHANGE_PORT ? Number(process.env.EXCHANGE_PORT) : port + 5;
 
 const app = express();

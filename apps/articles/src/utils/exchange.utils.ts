@@ -23,12 +23,12 @@ export async function getUsers(ids: string[]): Promise<UserDTOWithRole[]> {
   ]);
   
   const result = [
-    ...(usersResponse.status === 'fulfilled'
+    ...(usersResponse.status === 'fulfilled' && usersResponse.value
       ? usersResponse.value.map((x) => {
           return { ...x, role: 'USER' } as UserDTOWithRole;
         })
       : []),
-    ...(adminsResponse.status === 'fulfilled'
+    ...(adminsResponse.status === 'fulfilled' && adminsResponse.value
       ? adminsResponse.value.map((x) => {
           return { ...x, role: 'ADMIN' } as UserDTOWithRole;
         })
